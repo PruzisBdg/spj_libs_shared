@@ -166,19 +166,4 @@ __EXTENSION typedef unsigned long long  UINT64;
 #define CAT(x,y)  x##y
 #define XCAT(x,y)  CAT(x,y)
 
-// --------------------------------Static assert. ------------------------------
-//
-// Makes an enum  with name which is unique within a file. Does not reserve storage,
-// so does not need to be NO_DEBUG-ed.
-
-//#ifdef ASSERT
-//    #undef ASSERT
-//#endif
-
-#define ASSERT(condition) enum { XCAT(_compile_assert_var_at_line_,  __LINE__) = 1/(condition) };
-
-// This array-definition version works only with integer expressions. Non-integers can't be
-// arguments for an array size, even if the result is TRUE (1). Most compilers complain.
-// #define ASSERT(condition) typedef struct{char assert_failure[((condition) ? 1 : -1)];} XCAT(S_, __LINE__);
-
 #endif /* SPJ_STDINT_H */
