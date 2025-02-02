@@ -58,6 +58,9 @@ typedef unsigned long int  U32;
 typedef signed long long   S64;
 typedef unsigned long long U64;
 
+// If no <stdint> make uintptr_t 32bit; good for any legacy non-GCC.
+typedef U32 uintptr_t;
+
 typedef enum _BOOL { FALSE = 0, TRUE } BOOL;    /* Undefined size */
 #endif
 typedef char               C8;
