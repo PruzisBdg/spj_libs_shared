@@ -62,7 +62,9 @@ typedef unsigned long long U64;
 typedef U32 uintptr_t;
 
 typedef enum _BOOL { FALSE = 0, TRUE } BOOL;    /* Undefined size */
+typedef  unsigned char bool;
 #endif
+
 typedef char               C8;
 
 // ---------------- ends: Sized Integer types ---------------------------------
